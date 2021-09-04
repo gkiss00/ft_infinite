@@ -17,12 +17,14 @@ Different | !=
 
 ### Arithmetic operators
 
-* Addition          +
-* Subtraction       -
-* Multiplication    *
-* Division          /
-* Modulo            %
-* Exponentiation    ^
+Name | Symbol
+---- | ------
+Addition          | +
+Subtraction       | -
+Multiplication    | *
+Division          | /
+Modulo            | %
+Exponentiation    | ^
 
 ## Usage
 

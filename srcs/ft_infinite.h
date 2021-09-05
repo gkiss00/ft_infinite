@@ -41,6 +41,7 @@ typedef struct              s_command
 // CONVERTERS
 uint8_t     *str_to_hex(uint8_t *str, uint32_t size);
 uint8_t     *str_to_bin(uint8_t *str, uint32_t size);
+uint8_t     *double_dabble(uint8_t *nb, uint32_t size, uint32_t *new_size);
 
 // OPERATORS
 uint8_t     *addition(uint8_t *nb1, uint8_t *nb2, uint32_t size, uint32_t *new_size);

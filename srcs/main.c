@@ -40,6 +40,8 @@ static void hub(t_command *cmd, char *arg, uint8_t *nb1, uint8_t *nb2, uint32_t 
         printf("%02x", res[i]);
     }
     printf("\n");
+    uint32_t new_new_size = 0;
+    double_dabble(res, new_size, &new_new_size);
 }
 
 int main(int argc, char **argv){

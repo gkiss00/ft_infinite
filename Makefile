@@ -12,6 +12,7 @@ SRCS				= 	srcs/main.c \
 						srcs/node/node.c \
 						srcs/converters/binary.c \
 						srcs/converters/hexadecimal.c \
+						srcs/converters/double_dabble.c \
 
 OBJS				= ${SRCS:.c=.o}
 

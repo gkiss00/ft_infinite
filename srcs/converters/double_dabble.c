@@ -1,13 +1,13 @@
 #include "./../ft_infinite.h"
 
-static void    print_nb(char *msg, uint8_t *nb, uint32_t size) {
-    printf("%s: ", msg);
-    for (uint32_t i = 0; i < size; ++i) {
-        PRINT_UINT8(&nb[i]);
-        printf(" ");
-    }
-    printf("\n");
-}
+// static void    print_nb(char *msg, uint8_t *nb, uint32_t size) {
+//     printf("%s: ", msg);
+//     for (uint32_t i = 0; i < size; ++i) {
+//         PRINT_UINT8(&nb[i]);
+//         printf(" ");
+//     }
+//     printf("\n");
+// }
 
 static void    print_decimal(uint8_t *nb, uint32_t size) {
     uint8_t tmp;
@@ -30,8 +30,8 @@ uint8_t *double_dabble(uint8_t *nb, uint32_t size, uint32_t *new_size) {
     uint8_t *res = calloc(triple_size, 1);
 
     for (uint32_t i = 0; i < nb_turn; ++i) {
-        print_nb("res", res, triple_size);
-        print_nb("nb", nb, size);
+        // print_nb("res", res, triple_size);
+        // print_nb("nb", nb, size);
         for(uint32_t k = triple_size - 1; k < triple_size; --k) {
             uint8_t tmp;
             tmp = 0;
@@ -46,14 +46,14 @@ uint8_t *double_dabble(uint8_t *nb, uint32_t size, uint32_t *new_size) {
                 nb_tmp = addition(nb_tmp, three, triple_size, &nb_tmp_size);
                 nb_tmp = add_extra_bytes(nb_tmp, nb_tmp_size, triple_size);
                 res = nb_tmp;
-                printf("ADD-3\n");
-                print_nb("res", res, triple_size);
-                print_nb("nb", nb, size);
+                // printf("ADD-3\n");
+                // print_nb("res", res, triple_size);
+                // print_nb("nb", nb, size);
                 // tmp += 3;
                 // res[k] >>= 4;
                 // res[k] <<= 4;
                 // res[k] |= tmp;
-                break ;
+                // break ;
             }
             tmp = 0;
             tmp = res[k] >> 4;
@@ -66,23 +66,23 @@ uint8_t *double_dabble(uint8_t *nb, uint32_t size, uint32_t *new_size) {
                 nb_tmp = addition(nb_tmp, three, triple_size, &nb_tmp_size);
                 nb_tmp = add_extra_bytes(nb_tmp, nb_tmp_size, triple_size);
                 res = nb_tmp;
-                printf("ADD-3\n");
-                print_nb("res", res, triple_size);
-                print_nb("nb", nb, size);
+                // printf("ADD-3\n");
+                // print_nb("res", res, triple_size);
+                // print_nb("nb", nb, size);
                 // tmp += 3;
                 // res[k] <<= 4;
                 // res[k] >>= 4;
                 // res[k] |= (tmp << 4);
-                break ;
+                // break ;
             }
         }
-        printf("SHIFT\n");
+        // printf("SHIFT\n");
         shift_left(res, triple_size, 1);
         res[triple_size - 1] |= (nb[0] & 128) >> 7;
         shift_left(nb, size, 1);
     }
-    print_nb("res", res, triple_size);
-    print_nb("nb", nb, size);
+    // print_nb("res", res, triple_size);
+    // print_nb("nb", nb, size);
     res = discard_useless_bytes(res, triple_size, new_size);
     print_decimal(res, *new_size);
     return res;

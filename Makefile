@@ -8,6 +8,7 @@ SRCS				= 	srcs/main.c \
 						srcs/operators/modulo.c \
 						srcs/operators/exponent.c \
 						srcs/operators/comparator.c \
+						srcs/operators/bitwise.c \
 						srcs/node/node.c \
 						srcs/converters/binary.c \
 						srcs/converters/hexadecimal.c \

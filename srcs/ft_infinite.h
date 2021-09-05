@@ -49,12 +49,22 @@ uint8_t     *multiplication(uint8_t *nb1, uint8_t *nb2, uint32_t size, uint32_t 
 uint8_t     *division(uint8_t *nb1, uint8_t *nb2, uint32_t size, uint32_t *new_size);
 uint8_t     *modulo(uint8_t *nb1, uint8_t *nb2, uint32_t size, uint32_t *new_size);
 uint8_t     *exponent(uint8_t *nb1, uint8_t *nb2, uint32_t size, uint32_t *new_size);
+
 uint8_t     *superior(uint8_t *nb1, uint8_t *nb2, uint32_t size, uint32_t *new_size);
 uint8_t     *inferior(uint8_t *nb1, uint8_t *nb2, uint32_t size, uint32_t *new_size);
 uint8_t     *equal(uint8_t *nb1, uint8_t *nb2, uint32_t size, uint32_t *new_size);
 uint8_t     *not_equal(uint8_t *nb1, uint8_t *nb2, uint32_t size, uint32_t *new_size);
 uint8_t     *superior_or_equal(uint8_t *nb1, uint8_t *nb2, uint32_t size, uint32_t *new_size);
 uint8_t     *inferior_or_equal(uint8_t *nb1, uint8_t *nb2, uint32_t size, uint32_t *new_size);
+
+uint8_t     *not(uint8_t *nb1, uint8_t *nb2, uint32_t size, uint32_t *new_size);
+uint8_t     *and(uint8_t *nb1, uint8_t *nb2, uint32_t size, uint32_t *new_size);
+uint8_t     *or(uint8_t *nb1, uint8_t *nb2, uint32_t size, uint32_t *new_size);
+uint8_t     *xor(uint8_t *nb1, uint8_t *nb2, uint32_t size, uint32_t *new_size);
+uint8_t     *right_shift(uint8_t *nb1, uint8_t *nb2, uint32_t size, uint32_t *new_size);
+uint8_t     *left_shift(uint8_t *nb1, uint8_t *nb2, uint32_t size, uint32_t *new_size);
+uint8_t     *right_rotate(uint8_t *nb1, uint8_t *nb2, uint32_t size, uint32_t *new_size);
+uint8_t     *left_rotate(uint8_t *nb1, uint8_t *nb2, uint32_t size, uint32_t *new_size);
 
 // OPERATORS-UTILS
 bool        is_zero(uint8_t *nb1, uint32_t size);

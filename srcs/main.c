@@ -6,13 +6,21 @@ static t_command *init_cmd(){
     command_add_back(&head, new_command((uint8_t*)"*", &multiplication));
     command_add_back(&head, new_command((uint8_t*)"/", &division));
     command_add_back(&head, new_command((uint8_t*)"%", &modulo));
-    command_add_back(&head, new_command((uint8_t*)"^", &exponent));
+    command_add_back(&head, new_command((uint8_t*)"**", &exponent));
     command_add_back(&head, new_command((uint8_t*)"<", &inferior));
     command_add_back(&head, new_command((uint8_t*)">", &superior));
     command_add_back(&head, new_command((uint8_t*)"<=", &inferior_or_equal));
     command_add_back(&head, new_command((uint8_t*)">=", &superior_or_equal));
     command_add_back(&head, new_command((uint8_t*)"==", &equal));
     command_add_back(&head, new_command((uint8_t*)"!=", &not_equal));
+    command_add_back(&head, new_command((uint8_t*)"~", &not));
+    command_add_back(&head, new_command((uint8_t*)"&", &and));
+    command_add_back(&head, new_command((uint8_t*)"|", &or));
+    command_add_back(&head, new_command((uint8_t*)"^", &xor));
+    command_add_back(&head, new_command((uint8_t*)">>", &right_shift));
+    command_add_back(&head, new_command((uint8_t*)"<<", &left_shift));
+    command_add_back(&head, new_command((uint8_t*)">>>", &right_rotate));
+    command_add_back(&head, new_command((uint8_t*)"<<<", &left_rotate));
     return head;
 }
 

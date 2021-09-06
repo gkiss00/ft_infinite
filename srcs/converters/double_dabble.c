@@ -2,10 +2,10 @@
 
 // static void    print_nb(char *msg, uint8_t *nb, uint32_t size) {
 //     printf("%s: ", msg);
-//     for (uint32_t i = 0; i < size; ++i) {
-//         PRINT_UINT8(&nb[i]);
-//         printf(" ");
-//     }
+    // for (uint32_t i = 0; i < size; ++i) {
+    //     PRINT_UINT8(&nb[i]);
+    //     printf(" ");
+    // }
 //     printf("\n");
 // }
 

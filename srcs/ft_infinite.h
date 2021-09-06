@@ -14,6 +14,7 @@
 #include <time.h>
 #include <math.h>
 #include <limits.h>
+#include <getopt.h>
 
 #define MALLOC_ERROR "Malloc error, exit"
 #define CMD_ERROR "Command not found, exit"
@@ -30,17 +31,25 @@
 #define PRINT_UINT16(n) print_uint8(&((uint8_t *)n)[0]), printf(" "), print_uint8(&((uint8_t *)n)[1])
 #define PRINT_UINT8(n) print_uint8(&((uint8_t *)n)[0])
 
-typedef struct              s_command
+typedef struct              s_converter
 {
-    uint8_t                 *name;
+    char                    *name;
+    uint8_t                 *(*converter)(uint8_t *str, uint32_t size);
+    int                     modulo;
+    struct s_converter      *next;
+}                           t_converter;
+
+typedef struct              s_operator
+{
+    char                    *name;
     uint8_t                 *(*operator)(uint8_t *nb1, uint8_t *nb2, uint32_t size, uint32_t *new_size);
-    uint32_t                nb_bytes;
-    struct s_command        *next;
-}                           t_command;
+    struct s_operator       *next;
+}                           t_operator;
 
 // CONVERTERS
-uint8_t     *str_to_hex(uint8_t *str, uint32_t size);
-uint8_t     *str_to_bin(uint8_t *str, uint32_t size);
+uint8_t     *str_hex_to_bin(uint8_t *str, uint32_t size);
+uint8_t     *str_bin_to_bin(uint8_t *str, uint32_t size);
+uint8_t     *str_255_to_bin(uint8_t *str, uint32_t size);
 uint8_t     *double_dabble(uint8_t *nb, uint32_t size, uint32_t *new_size);
 
 // OPERATORS
@@ -84,7 +93,10 @@ void        print_uint8(uint8_t *n);
 void        print_number_hexa(uint8_t *n, uint32_t size);
 
 // NODE
-t_command   *new_command(uint8_t *name, uint8_t *(*operator)(uint8_t*, uint8_t*, uint32_t, uint32_t*));
-t_command   *command_last(t_command *command);
-void        command_add_back(t_command **head, t_command *new);
+t_operator  *new_operator(char *name, uint8_t *(*op)(uint8_t*, uint8_t*, uint32_t, uint32_t*));
+t_operator  *operator_last(t_operator *operator);
+void        operator_add_back(t_operator **head, t_operator *new);
+t_converter *new_convertor(char *name, int modulo, uint8_t *(*op)(uint8_t*, uint32_t));
+t_converter *convertor_last(t_converter *converter);
+void        convertor_add_back(t_converter **head, t_converter *new);
 #endif

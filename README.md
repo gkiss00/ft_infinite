@@ -38,9 +38,3 @@ Right shift     | >>
 Left shift      | <<
 Right rotate    | >>
 Left rotate     | <<
-
-## Usage
-
-numbers must be enter in hexadecimal
-
-* ./ft_infinite 01 + fe

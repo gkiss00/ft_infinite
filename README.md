@@ -36,5 +36,5 @@ Or              | &#124;
 Xor             | ^
 Right shift     | >>
 Left shift      | <<
-Right rotate    | >>
-Left rotate     | <<
+Right rotate    | >>>
+Left rotate     | <<<

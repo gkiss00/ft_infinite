@@ -32,7 +32,7 @@ Name | Symbol
 ---- | ------
 Not             | ~
 And             | &
-Or              | &#124
+Or              | &#124;
 Xor             | ^
 Right shift     | >>
 Left shift      | <<
